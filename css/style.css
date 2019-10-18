@@ -3,14 +3,109 @@ header{
   padding: 0;
 }
 
+h1{
+  font-family: garamond;
+  font-weight: bold;
+}
+
+h2{
+  font-family: garamond;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+nav{
+  margin-top: .1em;
+}
+
+iframe{
+  height: 30vh;
+  width: 100vw;
+  float: left;
+  margin-top: .2em;
+  border: none;
+  padding: 0;
+}
 .logo{
-  height: 10em;
+  display:block;
+  height: 8em;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 
-.navbar-toggler{
+.navbar{
+background-color: #2b2b2b;
+}
+
+
+.banner{
+  padding: 0;
+  overflow: hidden;
+  height: 8em;
+  position: relative;
+}
+
+.banner img{
+  width: 100%;
+  z-index:-2;
+  position: absolute;
+top: 0em;
+filter: brightness(.5);
+}
+
+.banner h1{
+
+  z-index: 2;
   color: white;
+  font-size: 1.5em;
+  display: block;
+text-align: center;
+margin-top: 1.75em;
+font-style: italic;
 }
+
+.jump-to-container{
+  padding: 0;
+  margin-top: .2em;
+  float: left;
+  position: relative;
+}
+
+.jump-to-container img{
+z-index: -2;
+}
+
+.jump-to-container h3{
+  z-index: 2;
+  position: absolute;
+  font-family: garamond;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+  margin-top: 3em;
+  width: 100%;
+}
+
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
 footer{
 
+}
+
+@media (min-width: 1200px){
+  .jump-to-container{
+    padding: 0;
+    margin-top: .2em;
+    height: 8em;
+    overflow: hidden;
+    float: left;
+    position: relative;
+  }
 }
