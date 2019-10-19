@@ -89,12 +89,12 @@ border-top: 1px solid white;
 }
 
 .banner img{
-  width: 100%;
-  z-index:-2;
-  position: absolute;
-top: -12em;
 filter: brightness(.5);
-
+position: absolute;
+top: 0em;
+width: 100%;
+padding: 0;
+z-index:-2;
 }
 
 .banner h1{
@@ -106,6 +106,7 @@ filter: brightness(.5);
 text-align: center;
 margin-top: 1.25em;
 font-style: italic;
+
 }
 
 .jump-to-container{
@@ -189,6 +190,17 @@ z-index: -2;
   text-align: center;
   font-style: italic;
   }
+
+  .banner img{
+  filter: brightness(.5);
+  position: absolute;
+  top: -10em;
+  width: 100%;
+  padding: 0;
+  z-index:-2;
+  }
+
+
 
 
   .jump-to-container{
