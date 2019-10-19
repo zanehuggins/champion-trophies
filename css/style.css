@@ -38,7 +38,9 @@ img{
 }
 
 footer{
-
+height: 4em;
+  background-color: #2b2b2b;
+  float: left;
 }
 
 
