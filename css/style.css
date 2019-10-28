@@ -186,6 +186,7 @@ z-index: -2;
 /* Awards | Trophies */
 .awards-subnav{
   float: left;
+  border-top: .3em solid white;
 }
 
 .awards-subnav ul{
@@ -209,7 +210,7 @@ z-index: -2;
 }
 
 .awards-subnav img{
-  width: 3em;
+  width: 4em;
   height: auto;
   margin-top: .25em;
   margin-bottom: .25em;
@@ -234,6 +235,19 @@ z-index: -2;
   color: black;
 }
 
+
+.aside{
+
+}
+
+.gallery h2{
+  font-size: 2em;
+}
+
+.gallery a:hover{
+  opacity: .75;
+  transition: .5s;
+}
 
 
 
