@@ -74,70 +74,101 @@
     </ul>
   </div>
 </nav>
+<main class="col-12 float-left">
+
+<?php
+if(isset($_POST['email'])) {
+
+    // EDIT THE 2 LINES BELOW AS REQUIRED
+    $email_to = "zahuggins@mix.wvu.edu";
+    $email_subject = "Champion Trophies & Awards Message";
+
+    function died($error) {
+        // your error code can go here
+        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+        echo "These errors appear below.<br /><br />";
+        echo $error."<br /><br />";
+        echo "Please go back and fix these errors.<br /><br />";
+        die();
+    }
 
 
-<div class="banner col-12 p-0">
-    <h1>Champion Trophies & Awards</h1>
-  <img src="images/background.png" alt="trophies" class="col-12 banner-img">
-
-</div>
-
-
-
-<main class="main-home col-12 p-0">
-
-<div class="col-12 col-md-5 offset-md-1 float-left">
-  <h2 class="col-12 p-0">Contact Us</h2>
-  <ul class="contact-list col-12">
-    <li>Owner: Tina Huggins</li>
-    <li>In-House Graphic Designer: Zane Huggins</li>
-    <li>304.225.2630</li>
-    <li>championtrophiesandawards@gmail.com</li>
-    <li>550 Beechurst Ave., Morgantown, WV 2650</li>
-  </ul>
-</div>
-
-<div class="col-12 col-md-6 col-lg-6 contact-form float-left">
-<form name="contactform" method="post" action="send_form_email.php" class="col-12 p-0 float-left">
-
-    <fieldset class="col-12 col-md-6 float-left">
-    <label for="first_name" class="col-12 float-left p-0">First Name</label>
-    <input type="text" name="first_name" id="first_name" class="col-12 float-left">
-  </fieldset>
-
-  <fieldset class="col-12 col-md-6 float-left">
-    <label for="last_name" class="col-12 p-0 float-left">Last Name</label>
-    <input type="text" name="last_name" id="last_name" class="col-12 float-left">
-  </fieldset>
-
-<fieldset class="col-12 col-md-6 float-left">
-    <label for="phone" class="col-12 float-left p-0">Phone</label>
-    <input type="tel" name="phone" id="phone" class="col-12">
-  </fieldset>
-
-  <fieldset class="col-12 col-md-6 float-left">
-      <label for="email" class="col-12 float-left p-0 float-left">Email</label>
-    <input type="email" name="email" id="email" class="col-12">
-  </fieldset>
-
-  <fieldset class="col-12">
-    <label for="message" class="col-12 p-0">Message</label>
-    <textarea class="col-12" id="message" name="message" rows="5"></textarea>
-  </fieldset>
-    <input type="submit" value="Submit" class="submit col-6 offset-3">
-  </form>
-</div>
-
-  </main>
-
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12289.520130485562!2d-79.96111600000002!3d39.641161!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88357b770039a0fb%3A0x374b7613861ad772!2s550%20Beechurst%20Ave%2C%20Morgantown%2C%20WV%2026505!5e0!3m2!1sen!2sus!4v1571437504896!5m2!1sen!2sus" allowfullscreen="" class="col-12 p-0"></iframe>
+    // validation expected data exists
+    if(!isset($_POST['first_name']) ||
+        !isset($_POST['last_name']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['phone']) ||
+        !isset($_POST['message'])) {
+        died('We are sorry, but there appears to be a problem with the form you submitted.');
+    }
 
 
 
+    $first_name = $_POST['first_name']; // required
+    $last_name = $_POST['last_name']; // required
+    $email_from = $_POST['email']; // required
+    $telephone = $_POST['phone']; // not required
+    $comments = $_POST['message']; // required
+
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+  if(!preg_match($email_exp,$email_from)) {
+    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+  }
+
+    $string_exp = "/^[A-Za-z .'-]+$/";
+
+  if(!preg_match($string_exp,$first_name)) {
+    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+  }
+
+  if(!preg_match($string_exp,$last_name)) {
+    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+  }
+
+  if(strlen($comments) < 2) {
+    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+  }
+
+  if(strlen($error_message) > 0) {
+    died($error_message);
+  }
+
+    $email_message = "Form details below.\n\n";
 
 
-<footer class="col-12 p-0">
+    function clean_string($string) {
+      $bad = array("content-type","bcc:","to:","cc:","href");
+      return str_replace($bad,"",$string);
+    }
+
+
+
+    $email_message .= "First Name: ".clean_string($first_name)."\n";
+    $email_message .= "Last Name: ".clean_string($last_name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Telephone: ".clean_string($telephone)."\n";
+    $email_message .= "Comments: ".clean_string($comments)."\n";
+
+// create email headers
+$headers = 'From: '.$email_from."\r\n".
+'Reply-To: '.$email_from."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+@mail($email_to, $email_subject, $email_message, $headers);
+?>
+
+<!-- include your own success html here -->
+
+Thank you for contacting us. We will be in touch with you very soon.
+
+
+<?php
+
+}
+?>
+</main>
+<footer class="col-12 float-left p-0">
 
 <div class="col-5 offset-2 offset-md-1 float-left">
   <ul class="social-media">

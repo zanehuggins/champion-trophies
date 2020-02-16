@@ -197,7 +197,7 @@ text-align: center;
 margin: auto;
 padding-top: 1.5em;
 font-style: italic;
-font-size: 2.25em;
+font-size: 2.15em;
 }
 
 .jump-to-container{
@@ -323,7 +323,20 @@ z-index: -2;
   transition: .5s;
 }
 
+@media (min-width: 550px){
+  .banner h1{
+    font-size: 3.2em;
+    padding-top: .75em;
+  }
+}
 
+
+@media (min-width: 768px){
+  .banner h1{
+    font-size: 3.2em;
+    padding-top: 1.25em;
+  }
+}
 
 
 @media (min-width: 1200px){
@@ -402,14 +415,14 @@ textarea{
   background-color: #E0E0E0;
 }
 
-.contact-form button{
+.submit{
   background-color: #2B2B2B;
   color: white;
   border: none;
   padding: .75em;
 }
 
-.contact-form button:hover{
+.submit:hover{
   opacity: .75;
 }
 
