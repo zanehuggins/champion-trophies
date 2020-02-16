@@ -395,7 +395,18 @@ textarea{
 }
 
 .contact-form{
-  background-color: #EFEFEF;
+  background-color: #E0E0E0;
+}
+
+.contact-form button{
+  background-color: #2B2B2B;
+  color: white;
+  border: none;
+  padding: .75em;
+}
+
+.contact-form button:hover{
+  opacity: .75;
 }
 
 form{
