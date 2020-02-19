@@ -1,3 +1,14 @@
+h1{
+font-family: 'Raleway', sans-serif !important;
+text-transform: uppercase;
+}
+
+p{
+font-family: garamond, serif;
+  font-size: 18px;
+  line-height: 28px;
+}
+
 body{
   background-color: #EFEFEF;
 }
@@ -12,6 +23,7 @@ header{
 header li{
   list-style: none;
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 header ul{
     margin-top: 2.5em;
@@ -66,6 +78,9 @@ h2{
   font-family: garamond;
   font-weight: bold;
   font-size: 1.3em;
+  font-family: 'Raleway', sans-serif !important;
+  text-transform: uppercase;
+
 }
 
 hr{
@@ -151,6 +166,10 @@ nav h4{
   font-size: 1.25em;
 }
 
+nav li{
+    font-family: 'Raleway', sans-serif;
+}
+
 .navbar{
 background-color: #2b2b2b;
 padding: 0;
@@ -187,7 +206,7 @@ z-index:-2;
 }
 
 .banner h1{
-
+font-family: garamond, serif !important;
   z-index: 2;
   color: white;
 position: absolute;
@@ -198,6 +217,7 @@ margin: auto;
 padding-top: 1.5em;
 font-style: italic;
 font-size: 2.15em;
+text-transform: none !important;
 }
 
 .jump-to-container{
@@ -281,6 +301,12 @@ z-index: -2;
   text-align: center;
 }
 
+.awards-subnav p{
+  font-family: 'Raleway', sans-serif !important;
+  padding-top: .25em;
+  font-size: 1em;
+}
+
 .awards-subnav img{
   width: 4em;
   height: auto;
@@ -342,9 +368,9 @@ z-index: -2;
 @media (min-width: 1200px){
 
   h1{
-    font-family: garamond;
-    font-weight: bold;
-    font-size: 3.5em;
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 2.5em;
+    text-transform: uppercase;
   }
 
   h2{
