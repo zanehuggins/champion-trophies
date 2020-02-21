@@ -163,11 +163,13 @@ a:hover{
 }
 
 
+
 nav h4{
   text-align: center !important;
   float: left;
   color: white;
   font-size: 1.25em;
+  font-family: 'Raleway', sans-serif;
 }
 
 nav li{

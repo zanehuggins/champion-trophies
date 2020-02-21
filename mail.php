@@ -76,14 +76,14 @@
 </nav>
 <main class="col-12 float-left">
 
-  <?php
-  $first_name = $_POST['first_name'];
-  $last_name = $_POST['last_name'];
+  <?php $first_name = $_POST['first-name'];
+  $last_name = $_POST['last-name'];
+  $message = $_POST['message'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
   $message = $_POST['message'];
   $formcontent="From: $name \n Message: $message";
-  $recipient = "zahuggins@mix.wvu.edu";
+  $recipient = "hugginszane@gmail.com";
   $subject = "Contact Form";
   $mailheader = "From: $email \r\n";
   mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
@@ -97,8 +97,9 @@
 <div class="col-5 offset-2 offset-md-1 float-left">
   <ul class="social-media">
     <li><h3>Connect With Us</h3></li>
-    <li><a href="#"><img src="images/facebook.svg" alt="link to Facebook"></a></li>
-    <li><a href="#"><img src="images/instagram.svg" alt="link to Instagram"></a></li>
+    <li><a href="https://www.facebook.com/championtrophiesandawards/" target="_blank"><img src="images/facebook.svg" alt="link to Facebook"></a></li>
+    <li><a href="https://www.instagram.com/champion_trophies_wv/" target="_blank"><img src="images/instagram.svg" alt="link to Instagram"></a></li>
+
   </ul>
 </div>
 
