@@ -59,21 +59,25 @@
   </button>
   <div class="collapse navbar-collapse col-12 p-0" id="navbarNav">
     <ul class="navbar-nav col-12 p-0">
-      <li class="nav-item col-lg-3">
-        <a class="nav-link" href="index.html">Home</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html" id="active-nav">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item col-lg-3">
+      <li class="nav-item">
         <a class="nav-link" href="awards.html">Awards</a>
       </li>
-      <li class="nav-item col-lg-3">
+      <li class="nav-item">
         <a class="nav-link" href="statue.html">Statues & Bronze</a>
       </li>
-      <li class="nav-item active col-lg-3">
-        <a class="nav-link" href="contact.html" id="active-nav">Contact Us <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="store.html">Store</a>
       </li>
     </ul>
   </div>
 </nav>
+
 <main class="col-12 float-left">
 
   <?php $first_name = $_POST['first-name'];
